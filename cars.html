@@ -1,0 +1,246 @@
+<html>
+  <head>
+    <title>
+      Local Storage
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <style>
+    h2{
+      font-size: 400%;
+        align-items: center;
+        text-align: center;
+        }
+    #txt{
+      font-size:50% ;
+      color: greenyellow;
+        text-shadow: 1px 1px 4px white;
+    }
+    label{
+      color: yellow;
+        text-shadow: 1px 1px 4px rgb(24, 255, 3) ;
+    }
+    body{
+        font-family: 'Baloo Bhai', cursive;
+        color: white;
+        text-shadow: 2px 2px 4px red;
+        background: url('buy.jpg') ;
+        background: black,0.1;
+        background-repeat: no-repeat;
+        background-size: cover;
+      /* margin: 0%; */
+        
+    }
+        .form-group {
+          font-size: 200%;
+          width: 50%;
+          text-align: center;
+          align-items: center;
+          margin: auto;
+      }
+    .container{
+      align-items: center;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      margin: 0% 20%;
+      }
+    form{
+        text-align: center;
+        align-items: center;
+    }
+
+  </style>
+
+  <body>
+  
+  <div class="container">
+    <h2>Registration</h2><br><br>
+    <marquee id="txt" behavior="" direction="" scrollamount="10"><h2>Wanna sell your car? 
+      Enter your car details below:</h2></marquee>
+    <form action="#">
+        <div class="form-group">
+            <label for="brand">Brand:</label><br>
+            <input list="brd" type="text" id="brand" name="brand" class="form-control" placeholder="eg.TATA, Hyundai" required>
+            <datalist id="brd">
+            <option value="Ambassador" />
+            <option value="Audi" />
+            <option value="BMW" />
+            <option value="Bentley" />
+            <option value="Chevrolet" />
+            <option value="Datsun" />
+            <option value="Fiat" />
+            <option value="Force" />
+            <option value="Ford" />
+            <option value="Honda" />
+            <option value="Hyundai" />
+            <option value="Isuzu" />
+            <option value="Jaguar" />
+            <option value="Jeep" />
+            <option value="Lamborghini" />
+            <option value="Land r" />
+            <option value="Mahindra" />
+            <option value="Maruti" />
+            <option value="Mercedes" />
+            <option value="Mini" />
+            <option value="Mitsubishi" />
+            <option value="Nissan" />
+            <option value="Porsche" />
+            <option value="Renault" />
+            <option value="Skoda" />
+            <option value="Smart" />
+            <option value="Tata" />
+            <option value="Toyota" />
+            <option value="Volkswagen" />
+            <option value="Volvo" />
+        </datalist>
+    </div>
+    <div class="form-group">
+         <!-- <h3>Model</h3> -->
+        <br><br><label for="model">Model:</label><br>
+        <input id="model" name="model" class="form-control" type="text" placeholder="eg. safari, harrier" required>
+        </div>
+
+    <div class="form-group">
+        <br><br><label for="year">Year:</label><br>
+        <!-- <h3>Model year</h3> -->
+        <input id="year" name="year" class="form-control"  type="number" placeholder="eg. 2010, 2018" >
+        </div>
+
+    <div class="form-group">
+        <br><br><label for="seats">Seats:</label><br>
+        <!-- <h3>Number of Seats</h3> -->
+        <input id="seats" name="seats" class="form-control" type="number" placeholder="eg. 4 , 7" >
+        </div>
+    
+    <div class="form-group">
+        <br><br><label for="condition">Condition:</label><br>
+        <!-- <h3>Condition</h3> -->
+        <input id="condition" class="form-control" name="condition" type="text" list="gab" placeholder="good/  average/ bad" >
+        <datalist id="gab">
+            <option value="good" />
+            <option value="average" />
+            <option value="bad" />
+        </datalist>
+        </div>
+
+
+
+        <div class="form-group">
+            <br><br><label for="rc">RC:</label><br>
+            <!-- <h3>Do you have RC (registration certificate)</h3> -->
+            <input id="rc" name="rc" type="text" class="form-control" list="yn" placeholder="yes or no" >
+            <datalist id="yn">
+                <option value="yes" />
+                <option value="no" />
+            </datalist>
+            </div>
+
+            <div class="form-group">
+            <br><br><label for="insurance">Insurance:</label><br>
+            <!-- <h3>Do you have Insurance?</h3> -->
+            <input id="insurance" class="form-control" name="insurance" type="text" list="yn" placeholder="yes or no" >
+            <datalist id="yn">
+                <option value="yes" />
+                <option value="no" />
+            </datalist>
+            </div>
+
+            <div class="form-group">
+            <br><br><label for="puc">PUC:</label><br>
+            <!-- <h3>Do you have PUC (pollution under control)?</h3> -->
+            <input id="puc" class="form-control" name="puc" list="yn" type="text" placeholder="yes or no" >
+            <datalist id="yn">
+                <option value="yes" />
+                <option value="no" />
+            </datalist>
+            </div>
+
+            <div class="form-group">
+            <br><br><label for="price">Price:</label><br>
+            <!-- <h3>Selling Price in Rupees(INR)</h3> -->
+            <input id="price" class="form-control" name="price" type="number" placeholder="eg. 200000, 800000" >
+            </div>
+
+            <div class="form-group">
+            <br><br><label for="color">Color:</label><br>
+            <!-- <h3>Color</h3> -->
+            <input id="color" class="form-control" type="text" placeholder="red blue black white" list="col" >
+            <datalist id="col" >
+                <option value="red" />
+                <option value="blue" />
+                <option value="black" />
+                <option value="grey" />
+                <option value="silver" />
+                <option value="white" />
+                <option value="brown" />
+                <option value="yellow" />
+                <option value="gold" />
+                <option value="green" />
+            </datalist>
+            </div>
+
+      <div class="form-group">
+        <br><br><label for="contact">Contact:</label>
+        <input type="number" class="form-control" id="contact" placeholder="Enter contact" name="contact">
+      </div>
+
+      <div class="form-group">
+        <br><br><label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      </div>
+
+   
+      <br><br><button type="button" onclick="saveData()" id="save_btn" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+  
+  </body>
+  <script>
+    function saveData()
+    {
+    let brand, model, year, seats, condition, rc, insurance, puc, price, color, contact, email;
+    brand=document.getElementById("brand").value;
+    model=document.getElementById("model").value;
+    year=document.getElementById("year").value;
+    seats=document.getElementById("seats").value;
+    condition=document.getElementById("condition").value;
+    rc=document.getElementById("rc").value;
+    insurance=document.getElementById("insurance").value;
+    puc=document.getElementById("puc").value;
+    price=document.getElementById("price").value;
+    color=document.getElementById("color").value;
+    contact=document.getElementById("contact").value;
+    email=document.getElementById("email").value;
+
+    let user_records = new Array();
+    user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+
+    if (user_records.some((v)=>{return v.email==email})) {
+        alert("duplicate data");
+    }
+    else{
+        user_records.push({
+        "brand":brand,
+        "model":model,
+        "year":year,
+        "seats":seats,
+        "condition":condition,
+        "rc":rc,
+        "insurance":insurance,
+        "puc":puc,
+        "price":price,
+        "color":color,
+        "contact":contact,
+        "email":email
+    })
+    }
+    localStorage.setItem("users",JSON.stringify(user_records));
+    
+    }
+    </script>
+</html>

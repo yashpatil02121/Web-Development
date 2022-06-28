@@ -1,0 +1,77 @@
+<html>
+    <head>
+      <title>
+        CAR DATA
+      </title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="col-sm-6" style="border:1px solid gray">
+            <h2 style="text-align:center">usertable</h2>
+            <div class="row">
+              <div class="col-sm-4" style="background-color:red;padding:10px;">Brand</div>
+              <div class="col-sm-4" style="background-color:blue;padding:10px;">Model</div>
+              <div class="col-sm-4" style="background-color:green;padding:10px;">Year</div>
+      
+            </div>
+            <div id="showCars"></div>
+        </div>
+    </body>
+    <script>
+        showData();
+        function saveData()
+        {
+            let brand, model, year, seats, condition, rc, insurance, puc, price, color, contact, email;
+    brand=document.getElementById("brand").value;
+    model=document.getElementById("model").value;
+    year=document.getElementById("year").value;
+    seats=document.getElementById("seats").value;
+    condition=document.getElementById("condition").value;
+    rc=document.getElementById("rc").value;
+    insurance=document.getElementById("insurance").value;
+    puc=document.getElementById("puc").value;
+    price=document.getElementById("price").value;
+    color=document.getElementById("color").value;
+    contact=document.getElementById("contact").value;
+    email=document.getElementById("email").value;
+    
+        let car_records = new Array();
+        car_records=JSON.parse(localStorage.getItem("cars"))?JSON.parse(localStorage.getItem("cars")):[]
+    
+        if (car_records.some((v)=>{return v.email==email})) {
+            alert("duplicate data");
+        }
+        else{
+            car_records.push({
+            "brand":brand,
+            "model":model,
+            "year":year
+
+        })
+        }
+        localStorage.setItem("cars",JSON.stringify(car_records));
+        showData();
+        }
+        
+        function showData(){
+          document.getElementById("showCars").innerHTML="";
+          let car_records = new Array();
+        car_records=JSON.parse(localStorage.getItem("cars"))?JSON.parse(localStorage.getItem("cars")):[]
+    
+        if (car_records) {
+          for (let i = 0; i < car_records.length; i++) {
+            let addDiv=document.createElement('div');
+          addDiv.className="row";
+          addDiv.innerHTML='<div class="col-sm-4" style="padding:10px;">'+car_records[i].brand+'</div><div class="col-sm-4" style="padding:10px;">'+car_records[i].model+'</div><div class="col-sm-4" style="padding:10px;">'+car_records[i].year+'</div>';
+          document.getElementById("showCars").appendChild(addDiv);
+          }
+        }          
+        }
+  
+        </script>
+    </html>
+      

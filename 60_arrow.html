@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow</title>
+
+</head>
+<body>
+    <div class="container">
+        This is a arrow function tutorial
+    </div>
+    <script>
+        let sum = (a,b) => {
+            return a+b;
+        };
+
+        let sum2 = (a,b)=>a+b;
+        // function greet(){
+        //     console.log('Good Morning');
+        // }
+        // greet();
+
+        // Arrow function
+        greet = ()=> {
+            console.log('Good Morning');
+        }
+        greet();
+
+        setTimeout(() => {
+            console.log("We are inside setTimeOut")
+        ,3000});
+
+    </script>
+</body>
+</html>

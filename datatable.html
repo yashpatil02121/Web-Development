@@ -1,0 +1,136 @@
+<html>
+    <head>
+      <title>
+        show data
+      </title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+    
+    <div class="container">
+      <div class="col-sm-6">
+      <h2>Registration</h2>
+      <form action="#">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="contact">Contact:</label>
+          <input type="number" class="form-control" id="contact" placeholder="Enter contact" name="contact">
+        </div>
+        <div class="form-group">
+          <label for="address">Enter Address:</label>
+          <input type="text" class="form-control" id="address" placeholder="Enter address" name="address">
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" id="psw" placeholder="Enter password" name="psw">
+        </div>
+       
+        <button type="button" onclick="saveData()" id="save_btn" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+    <div class="col-sm-6" style="border:1px solid gray">
+      <h2 style="text-align:center">usertable</h2>
+      <div class="row">
+        <div class="col-sm-4" style="background-color:red;padding:10px;">Name</div>
+        <div class="col-sm-4" style="background-color:blue;padding:10px;">Email</div>
+        <div class="col-sm-4" style="background-color:green;padding:10px;">Password</div>
+
+      </div>
+      <div id="showUsers"></div>
+    </div>
+    </div>
+    
+    </body>
+
+    <!-- <div>
+        <div class="col-sm-6">user table
+            <div class="row">
+                <div class="col-sm-4" style="background-color:red">name</div>
+                <div class="col-sm-4" style="background-color:blue">email</div>
+                <div class="col-sm-4" style="background-color:green">password</div>
+            </div>
+            <div id="showUsers"></div>
+        </div>
+    </div> -->
+
+    <script>
+      showData();
+      function saveData()
+      {
+      let name, contact, address, email, psw;
+      name=document.getElementById("name").value;
+      contact=document.getElementById("contact").value;
+      address=document.getElementById("address").value;
+      email=document.getElementById("email").value;
+      psw=document.getElementById("psw").value;
+  
+      let user_records = new Array();
+      user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+  
+      if (user_records.some((v)=>{return v.email==email})) {
+          alert("duplicate data");
+      }
+      else{
+          user_records.push({
+          "name":name,
+          "contact":contact,
+          "address":address,
+          "email":email,
+          "psw":psw
+      })
+      }
+      localStorage.setItem("users",JSON.stringify(user_records));
+      showData();
+      }
+      
+      function showData(){
+        document.getElementById("showUsers").innerHTML="";
+        let user_records = new Array();
+      user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+  
+      if (user_records) {
+        for (let i = 0; i < user_records.length; i++) {
+          let addDiv=document.createElement('div');
+        addDiv.className="row";
+        addDiv.innerHTML='<div class="col-sm-4" style="padding:10px;">'+user_records[i].name+'</div><div class="col-sm-4" style="padding:10px;">'+user_records[i].email+'</div><div class="col-sm-4" style="padding:10px;">'+user_records[i].psw+'</div>';
+        document.getElementById("showUsers").appendChild(addDiv);
+        }
+      }
+
+       
+
+
+
+
+
+      //   let user_records = new Array();
+      // user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+
+      // if(user_records)
+      // {
+      //     for (let i = 0; i < user_records.length; i++) {
+      //       let addDiv=Document.createElement('div');
+      //   addDiv.className="row";
+      //   addDiv.innerHTML=`  <div class="col-sm-4" >+user_records[i].name+</div><div class="col-sm-4" >email</div><div class="col-sm-4" >password</div>`;
+              
+      //     }
+      // }
+
+        // let mainDiv = document.getElementById("showUsers");
+        
+      }
+
+      </script>
+  </html>
+  

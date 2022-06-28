@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Functions</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <script>
+        var str = "This is a string";
+        console.log(str);
+        //first occurrence of a substring
+        var position = str.indexOf('is');
+        var position = str.lastIndexOf('is');
+        console.log(position);
+
+        //Slicing 
+        var substr = str.slice(0,9);  //can take negative values
+        var substr = str.substring(0,9);  //cannot take negative values
+        var substr1 = str.substr(1,7);  //takes  the length of the string here 7 is the length of string
+        console.log(substr);
+        console.log(substr1);
+
+        var replaced = str.replace('string','Harry');
+        
+        console.log(str);
+        console.log(replaced);
+ 
+        console.log(str.toUpperCase());
+        console.log(str.toLowerCase());
+        
+        var newString = str.concat(' New String');
+        console.log(newString);
+
+
+
+
+    </script>
+</body>
+</html>
